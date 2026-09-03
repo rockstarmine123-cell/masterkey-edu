@@ -24,7 +24,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Contact VidyaPath Academy for admissions, fees and support. Email support@edu.in or call +91 48394 24329, Monday to Saturday.",
+          "Contact VidyaPath Academy for admissions, fees and support. Email vidhyapath.support@edu.in or call +91 48394 24329, Monday to Saturday.",
       },
       { property: "og:title", content: "Contact | VidyaPath Academy" },
       {

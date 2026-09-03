@@ -1,8 +1,8 @@
 export const site = {
   name: "VidyaPath Academy",
   tagline: "Learn better. Score higher. Grow faster.",
-  email: "support@edu.in",
-  admissionsEmail: "admissions@edu.in",
+  email: "vidhyapath.support@edu.in",
+  admissionsEmail: "vidhyapath.admission@edu.in",
   phoneDisplay: "+91 48394 24329",
   phoneHref: "tel:+914839424329",
   hours: "Mon – Sat, 9:00 AM – 8:00 PM IST",
@@ -205,7 +205,7 @@ export const faqs = [
   },
   {
     q: "Can I get a refund?",
-    a: "Yes. Write to support@edu.in within 7 days of enrolment and we process a full refund, no questions asked.",
+    a: "Yes. Write to vidhyapath.support@edu.in within 7 days of enrolment and we process a full refund, no questions asked.",
   },
   {
     q: "Do professionals get a certificate?",
