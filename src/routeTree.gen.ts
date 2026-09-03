@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as BatchesRouteImport } from './routes/batches'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DoubtRouteImport } from './routes/doubt'
+import { Route as HelpRouteImport } from './routes/help'
+import { Route as NotesRouteImport } from './routes/notes'
+import { Route as PyqRouteImport } from './routes/pyq'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BatchesRoute = BatchesRouteImport.update({
+  id: '/batches',
+  path: '/batches',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DoubtRoute = DoubtRouteImport.update({
+  id: '/doubt',
+  path: '/doubt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpRoute = HelpRouteImport.update({
+  id: '/help',
+  path: '/help',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotesRoute = NotesRouteImport.update({
+  id: '/notes',
+  path: '/notes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PyqRoute = PyqRouteImport.update({
+  id: '/pyq',
+  path: '/pyq',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/batches': typeof BatchesRoute
+  '/contact': typeof ContactRoute
+  '/doubt': typeof DoubtRoute
+  '/help': typeof HelpRoute
+  '/notes': typeof NotesRoute
+  '/pyq': typeof PyqRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/batches': typeof BatchesRoute
+  '/contact': typeof ContactRoute
+  '/doubt': typeof DoubtRoute
+  '/help': typeof HelpRoute
+  '/notes': typeof NotesRoute
+  '/pyq': typeof PyqRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/batches': typeof BatchesRoute
+  '/contact': typeof ContactRoute
+  '/doubt': typeof DoubtRoute
+  '/help': typeof HelpRoute
+  '/notes': typeof NotesRoute
+  '/pyq': typeof PyqRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/batches'
+    | '/contact'
+    | '/doubt'
+    | '/help'
+    | '/notes'
+    | '/pyq'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/batches'
+    | '/contact'
+    | '/doubt'
+    | '/help'
+    | '/notes'
+    | '/pyq'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/batches'
+    | '/contact'
+    | '/doubt'
+    | '/help'
+    | '/notes'
+    | '/pyq'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  BatchesRoute: typeof BatchesRoute
+  ContactRoute: typeof ContactRoute
+  DoubtRoute: typeof DoubtRoute
+  HelpRoute: typeof HelpRoute
+  NotesRoute: typeof NotesRoute
+  PyqRoute: typeof PyqRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/batches': {
+      id: '/batches'
+      path: '/batches'
+      fullPath: '/batches'
+      preLoaderRoute: typeof BatchesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doubt': {
+      id: '/doubt'
+      path: '/doubt'
+      fullPath: '/doubt'
+      preLoaderRoute: typeof DoubtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help': {
+      id: '/help'
+      path: '/help'
+      fullPath: '/help'
+      preLoaderRoute: typeof HelpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notes': {
+      id: '/notes'
+      path: '/notes'
+      fullPath: '/notes'
+      preLoaderRoute: typeof NotesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pyq': {
+      id: '/pyq'
+      path: '/pyq'
+      fullPath: '/pyq'
+      preLoaderRoute: typeof PyqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  BatchesRoute: BatchesRoute,
+  ContactRoute: ContactRoute,
+  DoubtRoute: DoubtRoute,
+  HelpRoute: HelpRoute,
+  NotesRoute: NotesRoute,
+  PyqRoute: PyqRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
